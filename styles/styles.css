@@ -12,7 +12,11 @@
 
 :root {
   /* colors */
-  --background-color: black;
+  --blue-color: #0B1D39;
+  --gold-color: #D4AF37;
+  --green-color: #026B54;
+  --silver-color: #C0C0C0;
+  --background-color: white;
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
@@ -20,8 +24,9 @@
   --link-hover-color: #1d3ecf;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: lato, roboto-fallback, sans-serif;
+  --heading-font-family: trajan-sans-pro, roboto-condensed-fallback, sans-serif;
+  --font-family-heading-fun: adobe-handwriting-ernie, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -40,6 +45,11 @@
   --nav-height: 124px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
+
+  /* icons */
+  --icon-calendar : url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18"><title>S Calendar 18 N</title><rect id="Canvas" fill="%23ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M16.5,3H14V1.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V3H5V1.5A.5.5,0,0,0,4.5,1h-1a.5.5,0,0,0-.5.5V3H.5a.5.5,0,0,0-.5.5v13a.5.5,0,0,0,.5.5h16a.5.5,0,0,0,.5-.5V3.5A.5.5,0,0,0,16.5,3ZM16,16H1V4H3v.5a.5.5,0,0,0,.5.5h1A.5.5,0,0,0,5,4.5V4h7v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V4h2Z" /><rect class="fill" height="2" width="2" x="3" y="6" /><rect class="fill" height="2" width="2" x="6" y="6" /><rect class="fill" height="2" width="2" x="9" y="6" /><rect class="fill" height="2" width="2" x="12" y="6" /><rect class="fill" height="2" width="2" x="3" y="9" /><rect class="fill" height="2" width="2" x="6" y="9" /><rect class="fill" height="2" width="2" x="9" y="9" /><rect class="fill" height="2" width="2" x="12" y="9" /><rect class="fill" height="2" width="2" x="3" y="12" /><rect class="fill" height="2" width="2" x="6" y="12" /><rect class="fill" height="2" width="2" x="9" y="12" /><rect class="fill" height="2" width="2" x="12" y="12" /></svg>');
+  --icon-pin : url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18"><title>S Pin 18 N</title><rect id="Canvas" fill="%23ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M9,1A6.5,6.5,0,0,0,2.5,7.5c0,5.25,6.5,9.5,6.5,9.5s6.5-4.25,6.5-9.5A6.5,6.5,0,0,0,9,1Zm0,8A1.5,1.5,0,1,1,10.5,7.5,1.5,1.5,0,0,1,9,9Z" /></svg>');
+
 }
 
 /* fallback fonts */
