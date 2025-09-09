@@ -1,6 +1,7 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background: #000;
+  background: linear-gradient(180deg, rgb(0 0 0 / 44%) 0%, rgb(255 255 255 / 0%) 87%);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -19,6 +20,7 @@ header nav {
   height: var(--nav-height);
   padding: 0 24px;
   font-family: var(--body-font-family);
+  color: white;
 }
 
 header nav[aria-expanded='true'] {
@@ -143,11 +145,21 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  background-color: rgb(0 0 0 / 74%);
+  padding: 20px;
+  box-shadow: 0 0 8px rgb(0 0 0 / 50%);
 }
 
 header nav .nav-brand img {
   width: 128px;
   height: auto;
+  margin-top: 30px;
+}
+
+@media (width < 900px) {
+  header nav .nav-brand {
+    width: 128px;
+  }
 }
 
 /* sections */
@@ -156,6 +168,7 @@ header nav .nav-sections {
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
+  margin-bottom: 20px;
 }
 
 header nav[aria-expanded='true'] .nav-sections {

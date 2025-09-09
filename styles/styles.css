@@ -12,7 +12,7 @@
 
 :root {
   /* colors */
-  --background-color: white;
+  --background-color: black;
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
@@ -37,7 +37,7 @@
   --heading-font-size-xs: 22px;
 
   /* nav heights */
-  --nav-height: 64px;
+  --nav-height: 124px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
 }
@@ -84,10 +84,6 @@ body {
 
 body.appear {
   display: block;
-}
-
-header {
-  height: var(--header-height);
 }
 
 header .header,

@@ -6,14 +6,25 @@
 .hero {
   position: relative;
   padding: 40px 24px;
-  min-height: 300px;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
+  max-width: 600px;
+  margin-left: calc((100% - 1200px)/2);
   margin-right: auto;
   color: var(--background-color);
+  font-size: 5rem;
+  font-family: adobe-handwriting-ernie, sans-serif;
+  text-shadow: 0 0 8px rgb(0 0 0 / 80%);
+  margin-top: 100px;
+
+  .dark & {
+    color: white;
+  }
 }
 
 .hero picture {
@@ -30,8 +41,17 @@
   height: 100%;
 }
 
+@media (width <= 1200px) {
+  .hero h1 {
+    margin-left: 24px;
+    font-size: 4rem;
+  }
+}
+
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;
+
+   
   }
 }
