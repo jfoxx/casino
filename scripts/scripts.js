@@ -33,6 +33,20 @@ async function loadTypekit(doc, id) {
 }
 
 /**
+ * Set background imagees for elements with data-bg attribute
+ * @param {Element} elem The container element
+ */
+function setBackgroundImages(main) {
+  main.querySelectorAll('[data-background-image]').forEach((el) => {
+    const url = el.getAttribute('data-background-image');
+    if (url) {
+      el.style.setProperty('--background-image', `url("${url}")`);
+      el.classList.add('has-background-image');
+    }
+  });
+}
+
+/**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
  */
@@ -258,6 +272,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  setBackgroundImages(main);
   decorateBlocks(main);
 }
 
