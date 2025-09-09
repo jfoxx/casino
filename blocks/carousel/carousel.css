@@ -1,12 +1,10 @@
-.carousel .carousel-slides-container {
-  position: relative;
+.carousel-wrapper:has(.carousel.full) {
+  max-width: 100%;
+  padding: 0;
 }
 
-.carousel .carousel-slides,
-.carousel .carousel-slide-indicators {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.carousel .carousel-slides-container {
+  position: relative;
 }
 
 .carousel .carousel-slides {
@@ -14,6 +12,9 @@
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   overflow: scroll clip;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .carousel .carousel-slides::-webkit-scrollbar {
@@ -61,31 +62,73 @@
   width: var(--slide-content-width, auto);
 }
 
-.carousel .carousel-slide-indicators {
+/* poker chips */
+.carousel-slide-indicators {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 6px 12px;
-  padding: 12px;
-  background-color: var(--light-color);
-  line-height: 0;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
 }
 
-.carousel .carousel-slide-indicator button {
-  width: 24px;
-  height: 24px;
-  margin: 0;
+.carousel-slide-indicator button {
+  width: 32px;
+  height: 32px;
   padding: 0;
   border-radius: 50%;
-  background-color: #dadada;
-  transition: background-color 0.2s;
+  border: none;
+  background: radial-gradient(circle at center, #fff 40%, #d32f2f 42%);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
-.carousel .carousel-slide-indicator button:disabled,
-.carousel .carousel-slide-indicator button:hover,
-.carousel .carousel-slide-indicator button:focus-visible {
-  background-color: var(--text-color);
+.carousel-slide-indicator button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    #fff 0deg 15deg,
+    transparent 15deg 45deg,
+    #fff 45deg 60deg,
+    transparent 60deg 90deg,
+    #fff 90deg 105deg,
+    transparent 105deg 135deg,
+    #fff 135deg 150deg,
+    transparent 150deg 180deg,
+    #fff 180deg 195deg,
+    transparent 195deg 225deg,
+    #fff 225deg 240deg,
+    transparent 240deg 270deg,
+    #fff 270deg 285deg,
+    transparent 285deg 315deg,
+    #fff 315deg 330deg,
+    transparent 330deg 360deg
+  );
+  pointer-events: none;
 }
+
+.carousel-slide-indicator button::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 2;
+}
+
+.carousel-slide-indicator button:disabled {
+  background: radial-gradient(circle at center, #fff 40%, #000 42%);
+  transform: scale(1.1);
+}
+
 
 .carousel .carousel-navigation-buttons {
   position: absolute;
