@@ -42,6 +42,7 @@ export default function decorate(block) {
       a.href = link.href;
       a.target = link.target;
       a.rel = link.rel;
+      link.remove();
     }
     li.append(a);
     while (row.firstElementChild) a.append(row.firstElementChild);
