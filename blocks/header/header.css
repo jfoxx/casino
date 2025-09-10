@@ -335,3 +335,25 @@ header .breadcrumbs ol li[aria-current] {
     padding: 0 32px;
   }
 }
+
+header.scrolled .nav-wrapper {
+  background: var(--blue-color);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+  transition: background-color 0.8s, box-shadow 0.3s;
+}
+
+header.scrolled nav{
+  height: var(--header-scrolled-height);
+  transition: height 0.3s;
+}
+
+header.scrolled .nav-brand {
+  width: auto;
+  flex-basis: auto;
+}
+
+header.scrolled .nav-brand img {
+  height: 80px !important;
+  width: 80px;
+  transition: all 0.3s;
+}

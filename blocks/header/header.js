@@ -4,6 +4,18 @@ import { loadFragment } from '../fragment/fragment.js';
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
+function toggleHeaderClass() {
+  const header = document.querySelector('header');
+  if (header) {
+    const headerHeight = header.offsetHeight;
+    if (window.scrollY > headerHeight) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+}
+
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
@@ -240,4 +252,7 @@ export default async function decorate(block) {
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     navWrapper.append(await buildBreadcrumbs());
   }
+
+  window.addEventListener('scroll', toggleHeaderClass);
+  toggleHeaderClass();
 }

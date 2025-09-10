@@ -20,8 +20,8 @@
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --link-color: var(--green-color);
+  --link-hover-color: var(--gold-color);
 
   /* fonts */
   --body-font-family: lato, roboto-fallback, sans-serif;
@@ -45,6 +45,7 @@
   --nav-height: 124px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
+  --header-scrolled-height: 70px;
 
   /* icons */
   --icon-calendar : url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18"><title>S Calendar 18 N</title><rect id="Canvas" fill="%23ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M16.5,3H14V1.5a.5.5,0,0,0-.5-.5h-1a.5.5,0,0,0-.5.5V3H5V1.5A.5.5,0,0,0,4.5,1h-1a.5.5,0,0,0-.5.5V3H.5a.5.5,0,0,0-.5.5v13a.5.5,0,0,0,.5.5h16a.5.5,0,0,0,.5-.5V3.5A.5.5,0,0,0,16.5,3ZM16,16H1V4H3v.5a.5.5,0,0,0,.5.5h1A.5.5,0,0,0,5,4.5V4h7v.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V4h2Z" /><rect class="fill" height="2" width="2" x="3" y="6" /><rect class="fill" height="2" width="2" x="6" y="6" /><rect class="fill" height="2" width="2" x="9" y="6" /><rect class="fill" height="2" width="2" x="12" y="6" /><rect class="fill" height="2" width="2" x="3" y="9" /><rect class="fill" height="2" width="2" x="6" y="9" /><rect class="fill" height="2" width="2" x="9" y="9" /><rect class="fill" height="2" width="2" x="12" y="9" /><rect class="fill" height="2" width="2" x="3" y="12" /><rect class="fill" height="2" width="2" x="6" y="12" /><rect class="fill" height="2" width="2" x="9" y="12" /><rect class="fill" height="2" width="2" x="12" y="12" /></svg>');
@@ -274,6 +275,36 @@ main .section.highlight {
 main .section.dark {
   background-color: var(--blue-color);
   color: white;
+}
+
+/* stylelint-disable no-descending-specificity */
+main .section.boxed {
+  > div {
+    background-color: rgb(11 29 57 / 65.8%);
+    color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 40px;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+   >div:first-of-type {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    
+   >div:last-of-type {
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      margin-bottom: 0;
+    }
+}
+
+main .section.inset >div  {
+  max-width: 800px;
 }
 
 main .section.has-background-image {
