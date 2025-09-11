@@ -100,6 +100,20 @@ function buildAutoBlocks(main) {
 /**
  * Load Adobe Target.
  */
+
+function setTargetPageParams() {
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.text = `
+    function targetPageParams() {
+      return {
+        "at_property": "ca9df9f8-e7d6-9f5f-505d-5cb876c8287c"
+      };
+    }
+  `;
+  document.head.appendChild(script);
+}
+
 function initATJS(path, config) {
   window.targetGlobalSettings = config;
   return new Promise((resolve) => {
@@ -191,6 +205,7 @@ async function getAndApplyOffers() {
 // eslint-disable-next-line no-unused-vars
 let atjsPromise = Promise.resolve();
 if (getMetadata('target')) {
+  setTargetPageParams();
   // eslint-disable-next-line no-unused-vars
   atjsPromise = initATJS('./at.js', {
     clientCode: 'foxx',
