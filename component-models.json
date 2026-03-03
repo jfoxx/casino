@@ -50,8 +50,20 @@
         "label": "Style",
         "options": [
           {
-            "name": "Highlight",
-            "value": "highlight"
+            "name": "Boxed",
+            "value": "boxed"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Inset",
+            "value": "inset"
+          },
+          {
+            "name": "Shaded",
+            "value": "shaded"
           }
         ]
       }
