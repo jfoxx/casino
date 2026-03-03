@@ -262,10 +262,13 @@ function decorateSections(main) {
       const meta = readBlockConfig(sectionMeta);
       Object.keys(meta).forEach((key) => {
         if (key === 'style') {
-          const styles = meta.style
-            .split(',')
-            .filter((style) => style)
-            .map((style) => toClassName(style.trim()));
+          const styleValue = meta.style;
+          const styleList = Array.isArray(styleValue)
+            ? styleValue
+            : (styleValue ?? '').toString().split(',');
+          const styles = styleList
+            .filter((s) => s)
+            .map((s) => toClassName(s.trim()));
           styles.forEach((style) => section.classList.add(style));
         } else {
           section.dataset[toCamelCase(key)] = meta[key];
